@@ -1,0 +1,231 @@
+\documentclass[a4paper, 12pt, twoside, openright]{book}
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{amsthm}
+\usepackage[toc,page]{appendix}
+%------------------------------ colors
+\usepackage[usenames,dvipsnames,table]{xcolor} % use colors on table and more
+\definecolor{333}{RGB}{51, 51, 51} % define custom color
+%------------------------------ source code
+\usepackage{listings}
+\lstset{
+  basicstyle=\footnotesize\sffamily,
+  commentstyle=\itshape\color{gray},
+  captionpos=b,
+  frame=shadowbox,
+  language=HTML,
+  rulesepcolor=\color{333},
+  tabsize=2
+}
+%------------------------------ define Abstract environment, missing in the 'book' class
+\newenvironment{abstract}{\cleardoublepage \null \vfill \begin{center}\bfseries\abstractname \end{center}}{\vfill\null}
+%\addto\captionsenglish{\renewcommand*\abstractname{Sommario}} % change Abstract title
+%------------------------------ active url
+\usepackage{url}
+\renewcommand{\UrlFont}{\color{black}\small\ttfamily}
+\usepackage[colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black]{hyperref} % active ref
+%------------------------------ macros
+\newcommand{\sectionname}{Section} % define Section ref
+\newcommand{\subsectionname}{Sub-section} % define Sub-section ref
+\renewcommand*\arraystretch{1.4} % tables padding
+\theoremstyle{plain}
+\newtheorem{thm}{Teorema}[chapter] % reset theorem numbering for each chapter
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definizione} % definition numbers are dependent on theorem numbers
+\newtheorem{exmp}[thm]{Esempio} % same for example numbers
+
+\begin{document}
+\frontmatter
+
+
+\cleardoublepage % make left page blank
+\thispagestyle{empty} %------------------------------ DEDICA
+
+\null
+\vspace{2cm}
+\begin{flushright}
+A ...
+\end{flushright}
+\vfill
+
+\begin{quote}
+  "Without data you're just another person with an opinion"
+
+  \textit{W. Edwards Deming}
+\end{quote}
+\vfill
+\null
+
+
+\begingroup %------------------------------ CONTENTS
+  \makeatletter
+  \let\ps@plain\ps@empty
+  \makeatother
+  \tableofcontents
+  \clearpage
+\endgroup
+
+
+\begin{abstract} %------------------------------ ABSTRACT
+\markboth{}{} % remove header
+\thispagestyle{empty}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis tincidunt ligula. Duis ante neque, convallis vel vulputate vel, dignissim vel enim. Proin et iaculis libero. Aliquam erat volutpat. Cras ac purus non ante ultricies scelerisque. Donec lobortis lorem imperdiet leo consequat nec iaculis velit adipiscing. Curabitur nec gravida neque. Nunc vel dui vitae ante dapibus sagittis ac non libero. Suspendisse gravida commodo arcu bibendum luctus. Nam placerat pharetra massa, aliquam rutrum arcu fermentum nec. In non ultrices ante. Pellentesque pretium, felis ac mattis condimentum, dui massa ultricies nisl, hendrerit malesuada magna risus eget dolor. Pellentesque lobortis eleifend nibh, sed gravida sem fringilla eget. Proin pretium, arcu in ornare pellentesque, elit ante faucibus sem, at convallis eros ante ut velit. Donec ornare erat non diam tristique vitae congue nulla commodo. Proin fermentum fringilla mattis. Pellentesque ut dolor hendrerit tellus tincidunt egestas at sit amet velit.
+\end{abstract}
+
+
+\mainmatter
+
+\chapter{La distribuzione Normale Asimmetrica multidimensionale} %------------------------------ INTRODUCTION
+
+Definita da A. Azzalini e A. Dalla Valle nel 1996 \cite{multi} come generalizzazione della corrispettiva classe di distribuzioni univariata proposta da Azzalini nel 1985 \cite{uni} la famiglia di distribuzioni Normale Asimmetrica multidimensionale presenta proprietà ideali tra cui:
+
+\begin{itemize}
+\setlength\itemsep{1em}
+	\item inclusione della distribuzione Normale;
+	\item tracciabilità matematica;
+	\item ampio numero di indici per il calcolo di asimmetria e curtosi;
+	\item possibilità di passaggio tra normalità e non normalità attraverso un parametro di regolarizzazione.
+\end{itemize}  
+
+Grazie a queste proprietà la classe di distribuzioni Normali Asimmetriche permette un ottimo adattamento ai dati con relativa semplicità nel trattamento dal punto di vista matematico vista l'analogia con la distribuzione normale. Attraverso l'utilizzo del parametro di regolarizzazione è inoltre possibile modificare asimmetria e curtosi della distribuzione in quanto l'introduzione di asimmetria modifica anche le code della distribuzione portando ad una modifica della curtosi della stessa. Risulta necessario quindi ottenere degli indici che permettano di calcolare sia l'asimmetria \cite{scarpa} che della curtosi \cite{lucia} in modo da permettere una descrizione completa della forma della distribuzione. 
+
+\section{Distribuzione Normale Asimmetrica multidimensionale}
+
+La definizione della famiglia di distribuzioni Normale Asimmetrica multivariata nel campo pratico è stata estremamente rilevante in quanto, nel caso multivariato, il numero di distribuzioni capaci di modellare leggere asimmetrie per le distribuzioni marginali è estremamente ridotto; inoltre la famiglia Normale Asimmetrica multivariata presenta una grandissima flessibilità grazie al parametro di regolarizzazione permettendo quindi un'ottima capacità di adattamento a diversi tipi di dati. 
+La generalizzazione multivariata della famiglia Normale Asimmetrica fornita da Azzalini e Dalla Valle permette di ottenere una distribuzione le cui marginali sono a loro volta delle distribuzioni Normali Asimmetriche. 
+
+\begin{defn}
+(Azzalini e Dalla Valle, 1996) una variabile continua $p$-dimensionale $Z$ è detta avere distribuzione Normale Asimmetrica multivariata ($Z\sim SN_p(\overline{\Omega},\alpha)$) se è continua e ha funzione di densità
+$$
+2 \phi_p(z;\overline{\Omega})\Phi(\alpha^\top z) \qquad (z \in \Re)
+$$
+\end{defn}
+
+Il parametro di regolarizzazione $\alpha$ è detto in questo caso parametro di forma e permette di regolare asimmetria e curtosi. Con $\alpha=0$ si ottiene la distribuzione Normale Multivariata con matrice di correlazione $\overline{\Omega}$.
+Questa definizione assume $\mu=0$, per questo Azzalini nel 2005 propone una generalizzazione con l'introduzione di un parametro di posizione ($\xi$ di dimensione $p\times 1$) e uno di scala ($\omega$ matrice diagonale di dimensione $p \times p$). L'introduzione del parametro di posizione $\xi$ permette di centrare la distribuzione in un valore diverso da $0$. 
+
+\begin{thm}
+(Azzalini e Capitanio, 1999) Sia $Z$ una variabile Normale Asimmetrica $p$-dimensionale, si ottiene che $Y=\xi+\omega Z$ con $\xi=(\xi_1,\ldots,\xi_p)^\top$ e $\omega=diag(\omega_1,\ldots,\omega_p)$ ha funzione di densità
+
+$$
+2 \phi_p((y-\xi);\Omega)\Phi(\alpha^\top \omega^{-1}(y-\xi)) \qquad (z \in \Re)
+$$
+
+
+\end{thm}
+
+con $\phi_p((y-\xi);\Omega)$ densità di una normale con media $\xi$ e matrice di varianze e covarianze $\Omega=\omega\overline{\Omega}\omega$, per la variabile $Y$ si indicherà la distribuzione come $Y\sim SN_p(\xi,\Omega,\alpha)$ 
+
+\subsection{I primi quattro momenti della distribuzione Normale Asimmetrica multidimensionale}
+
+Azzalini e Dalla Valle (1996) hanno calcolato la funzione generatrice dei momenti nel caso in cui $Y\sim SN_p(\Omega,\alpha)$
+
+\begin{thm}
+(Azzalini e Dalla Valle, 1996) Sia $Z$ una variabile Normale Asimmetrica $p$-dimensionale con $Z\sim SN_p(\Omega,\alpha)$, allora la funzione generatrice dei momenti per $Z$ è pari a:
+
+$$
+\begin{array}{rcl}
+M_4 & = & 2 \int_{\Re^p} \exp(t^\top z)\phi_p(z;\Omega)\Phi(\alpha^\top z) dz \\
+    & = & 2 \exp(\frac{1}{2} t^\top\Omega t)\Phi(\delta^\top t) \qquad (t \in \Re^p)
+\end{array}
+$$ 
+
+con
+
+$$
+\delta = \frac{\Omega\alpha}{\left(1+\alpha^\top \Omega \alpha \right)^{\frac{1}{2}}}
+$$
+\end{thm}
+
+Grazie a questo teorema Genton nel 2001 calcolata i primi quattro momenti per una distribuzione Normale Asimmetrica $p$-variata 
+
+\begin{thm}
+(Genton et al., 2001): Sia $Z$ un vettore casuale con distribuzione $Z\sim SN_p(\alpha,\Omega)$, allora:
+
+$$
+\begin{array}{rcl}
+M_1 & = & \sqrt{\frac{2}{\pi}}\delta \\
+M_2 & = & \Omega \\
+M_3 & = & \sqrt{\frac{2}{\pi}}\left[\delta \otimes \Omega + vec{\Omega}\delta^\top + \left( I_p \otimes \delta \right) \Omega - \left( I_p \otimes \delta \right)\left( \delta \otimes \delta^\top \right)  \right] \\
+M_4 & = & (I_{p^2} + U_{p,p})(\Omega \otimes \Omega) + vec(\Omega)vec(\Omega^\top)
+\end{array}
+$$ 
+\end{thm}
+
+Generalizzando i momenti per gli una distribuzione con parametro di posizione $\xi\neq 0$ Genton (2001) calcola i primi quattro momenti non centrati per la distribuzione $Y\sim SN_p(\xi,\Omega,\alpha)$ 
+
+\begin{thm}
+(Azzalini, 2005): Sia $Y$ un vettore casuale con distribuzione $Y\sim SN_p(\xi,\Omega,\alpha)$, allora la funzione generatrice dei momenti per $Y$ è:
+
+$$
+M(t)= 2\exp(\xi^\top t + \frac{1}{2} t^\top \Omega t)\Phi(\delta^\top t) \qquad (t \in \Re^p)
+$$
+\end{thm}  
+
+\begin{thm}
+(Genton et al., 2001): Sia $Y$ un vettore casuale con distribuzione $Y\sim SN_p(\xi,\Omega,\alpha)$, allora i primi quattro momenti di $Y$ sono:
+
+$$
+\begin{array}{rcl}
+M_1 & = & \xi+\sqrt{\frac{2}{\pi}}\delta \\
+M_2 & = & \Omega + \xi \xi^\top + \sqrt{\frac{2}{\pi}}\left(\xi \delta^\top + \delta\xi^top\right)\\
+M_3 & = & \Omega\otimes\xi+\xi\otimes \Omega + vec(\Omega) \otimes \xi^\top + \xi \otimes \xi^\top \otimes \xi + \sqrt{\frac{2}{\pi}}[\delta \otimes \Omega + vec(\Omega)\delta^\top \\
+& & + \left( I_p \otimes \delta \right) \Omega - \delta \otimes \delta^\top \otimes \delta + \delta \otimes \xi^\top \otimes \xi + \xi \otimes \delta^\top \otimes \xi + \xi \otimes \xi^\top \otimes \delta ] \\
+M_4 & = & \Omega \otimes \xi \otimes \xi^\top + \xi \otimes \Omega \otimes \xi^\top + vec(\Omega)\otimes \xi^\top \otimes \xi^\top + \xi \otimes \xi^\top \otimes \xi \otimes \xi^\top + \Omega \otimes \Omega \\
+& & + vec(\Omega)vec(\Omega)^\top + U_{p,p}(\Omega \otimes \Omega) + \xi^\top \otimes \Omega \otimes \xi + \xi \otimes \xi \otimes vec(\Omega)^\top + \xi \otimes \xi^\top \otimes \Omega \\
+& & + \sqrt{\frac{2}{\pi}}[\delta \otimes \Omega \otimes \xi^\top + vec(\Omega)\otimes\delta^\top\otimes\xi^\top+((I_p \otimes \delta)\Omega)\otimes\xi^\top + \delta \otimes \xi^\top \otimes \xi \otimes \xi^\top \\
+& & + \xi \otimes \delta^\top \otimes \xi \otimes \xi^\top + \xi \otimes \xi^\top \otimes \delta \otimes \xi^\top + \delta^\top \otimes \Omega \otimes \xi + \delta \otimes vec(\Omega)^\top \otimes \xi \\
+& & + (\Omega(I_p\otimes\delta^\top))\otimes\xi+\xi^\top\otimes\delta\otimes\Omega+\xi^\top\otimes(vec(\Omega)\delta^\top)+\xi^\top\otimes((I_p\otimes\delta)\Omega)\\
+& & +\xi\otimes\delta^\top\otimes\Omega+\xi\otimes\delta\otimes vec(\Omega)^\top + \xi\otimes(\Omega(I_p\otimes\delta^\top))+\xi\otimes\xi^\top\otimes\delta\otimes\delta^\top \\ 
+& & -\delta\otimes\delta^\top\otimes\delta\otimes\xi^\top-\delta^\top\otimes\delta\otimes\delta^\top\otimes\xi-\xi^\top\otimes\delta\otimes\delta^\top\otimes\delta-\xi\otimes\delta^\top\otimes\delta\otimes\delta^\top]
+\end{array}
+$$
+
+\end{thm}  
+\subsection{Le proprietà statistiche della distribuzione Normale Asimmetrica multidimensionale}
+\thispagestyle{empty}
+
+
+
+\chapter{Indici di Curtosi per la Normale Asimmetrica multidimensionale} %------------------------------ CHAPTER TITLE
+Nella descrizione descrizione delle caratteristiche di una distribuzione, oltre agli indici di posizione, variabilità globale e asimmetria è utile definire anche un indice di curtosi. Etimologicamente la parola deriva dal greco $\kappa\upsilon\rho\tau\acute{o}\varsigma$ che significa "curvo, arcuato". In generale la curtosi è un indice di forma della curva definito usualmente come rapporto tra la lontananza delle osservazioni dall'indice di posizione rispetto alla sua distanza media, permettendo di definire la pesantezza delle code di una distribuzione. L'indice di curtosi calcola quindi l'allontanamento dalla normalità distributiva a parità di media e varianza, verificando un maggior appiattimento (distribuzione platicurtica) o un maggior appuntimento (distribuzione leptocurtica) della distribuzione. È importante tenere conto però del fatto che oltre a dipendere dall'andamento delle code della distribuzione l'indice di curtosi dipende anche dal comportamento della stessa nella sua parte centrale, un ispessimento delle code della distribuzione porterà ad un minor numero di osservazioni nella parte centrale della distribuzione e viceversa code meno spesse portano ad un maggior numero di osservazioni nella parte centrale in quanto l'integrale della densità deve valere sempre $1$. La complessità di questo fenomeno ha portato negli anni alla definizione di vari indici per il calcolo della curtosi. 
+
+Nel caso multidimensionale si ha un aumento della complessità di questo indice poiché è intrinsecamente connesso con le altre caratteristiche della distribuzione come la pesantezza delle code, la variabilità e l'asimmetria, inoltre la presenza di più dimensioni connesse tra loro complica l'interpretazione di questo indice 
+\section{L'indice di Mardia}
+\section{L'indice di Malkovich-Afifi}
+\section{Il nuovo indice direzionale}
+\section{L'indice di Srivastava}
+\section{L'indice di Mori-Rohatgi-Székeley}
+\section{L'indice di Kollo}
+\thispagestyle{empty}
+
+
+\chapter{Confronto tra le misure di Curtosi}
+\section{Performance delle misure di Curtosi}
+\thispagestyle{empty}
+
+\chapter{Conclusioni}
+\backmatter
+
+\begin{appendices}
+\chapter{Operatori Matematici}
+The contents...
+\chapter{Codice R}
+The contents...
+\end{appendices}
+
+\begingroup %------------------------------ BIBLIOGRAPHY
+  \makeatletter
+  \let\ps@plain\ps@empty
+  \makeatother
+  \bibliography{template-thesis}
+  \addcontentsline{toc}{chapter}{Bibliography}
+  \bibliographystyle{ieeetr} % sort in order of appearance
+\endgroup
+\end{document} 

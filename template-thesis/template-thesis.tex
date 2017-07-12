@@ -1,0 +1,120 @@
+\documentclass[a4paper, 12pt, twoside, openright]{book}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage[toc,page]{appendix}
+%------------------------------ colors
+\usepackage[usenames,dvipsnames,table]{xcolor} % use colors on table and more
+\definecolor{333}{RGB}{51, 51, 51} % define custom color
+%------------------------------ source code
+\usepackage{listings}
+\lstset{
+  basicstyle=\footnotesize\sffamily,
+  commentstyle=\itshape\color{gray},
+  captionpos=b,
+  frame=shadowbox,
+  language=HTML,
+  rulesepcolor=\color{333},
+  tabsize=2
+}
+%------------------------------ define Abstract environment, missing in the 'book' class
+\newenvironment{abstract}{\cleardoublepage \null \vfill \begin{center}\bfseries\abstractname \end{center}}{\vfill\null}
+\addto\captionsenglish{\renewcommand*\abstractname{Sommario}} % change Abstract title
+%------------------------------ active url
+\usepackage{url}
+\renewcommand{\UrlFont}{\color{black}\small\ttfamily}
+\usepackage[colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black]{hyperref} % active ref
+%------------------------------ macros
+\newcommand{\sectionname}{Section} % define Section ref
+\newcommand{\subsectionname}{Sub-section} % define Sub-section ref
+\renewcommand*\arraystretch{1.4} % tables padding
+
+
+\begin{document}
+\frontmatter
+
+
+\cleardoublepage % make left page blank
+\thispagestyle{empty} %------------------------------ DEDICA
+
+\null
+\vspace{2cm}
+\begin{flushright}
+A ...
+\end{flushright}
+\vfill
+
+\begin{quote}
+  "Without data you're just another person with an opinion"
+
+  \textit{W. Edwards Deming}
+\end{quote}
+\vfill
+\null
+
+
+\begingroup %------------------------------ CONTENTS
+  \makeatletter
+  \let\ps@plain\ps@empty
+  \makeatother
+  \tableofcontents
+  \clearpage
+\endgroup
+
+
+\begin{abstract} %------------------------------ ABSTRACT
+\markboth{}{} % remove header
+\thispagestyle{empty}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis tincidunt ligula. Duis ante neque, convallis vel vulputate vel, dignissim vel enim. Proin et iaculis libero. Aliquam erat volutpat. Cras ac purus non ante ultricies scelerisque. Donec lobortis lorem imperdiet leo consequat nec iaculis velit adipiscing. Curabitur nec gravida neque. Nunc vel dui vitae ante dapibus sagittis ac non libero. Suspendisse gravida commodo arcu bibendum luctus. Nam placerat pharetra massa, aliquam rutrum arcu fermentum nec. In non ultrices ante. Pellentesque pretium, felis ac mattis condimentum, dui massa ultricies nisl, hendrerit malesuada magna risus eget dolor. Pellentesque lobortis eleifend nibh, sed gravida sem fringilla eget. Proin pretium, arcu in ornare pellentesque, elit ante faucibus sem, at convallis eros ante ut velit. Donec ornare erat non diam tristique vitae congue nulla commodo. Proin fermentum fringilla mattis. Pellentesque ut dolor hendrerit tellus tincidunt egestas at sit amet velit.
+\end{abstract}
+
+
+\mainmatter
+
+\chapter{La distribuzione Normale Asimmetrica Multivariata} %------------------------------ INTRODUCTION
+
+\section{Distribuzione Normale Asimmetrica Multidimensionale}
+
+\subsection{I primi quattro momenti della distribuzione Normale Asimmetrica multidimensionale}
+
+\subsection{Le proprietà statistiche della distribuzione Normale Asimmetrica multidimensionale}
+\thispagestyle{empty}
+
+
+\chapter{Indici di Curtosi per la Normale Asimmetrica Multidimensionale} %------------------------------ CHAPTER TITLE
+\section{L'indice di Mardia}
+\section{L'indice di Malkovich-Afifi}
+\section{Il nuovo indice direzionale}
+\section{L'indice di Srivastava}
+\section{L'indice di Mori-Rohatgi-Székeley}
+\section{L'indice di Kollo}
+\thispagestyle{empty}
+
+
+\chapter{Confronto tra le misure di Curtosi}
+\section{Performance delle misure di Curtosi}
+\thispagestyle{empty}
+
+\chapter{Conclusioni}
+\backmatter
+
+\begin{appendices}
+\chapter{Operatori Matematici}
+The contents...
+\chapter{Codice R}
+The contents...
+\end{appendices}
+
+\begingroup %------------------------------ BIBLIOGRAPHY
+  \makeatletter
+  \let\ps@plain\ps@empty
+  \makeatother
+  \bibliography{template-thesis}
+  \addcontentsline{toc}{chapter}{Bibliography}
+  \bibliographystyle{ieeetr} % sort in order of appearance
+\endgroup
+\end{document} 
