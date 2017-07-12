@@ -37,7 +37,7 @@
 \newtheorem{thm}{Teorema}[chapter] % reset theorem numbering for each chapter
 
 \theoremstyle{definition}
-\newtheorem{defn}[thm]{Definizione} % definition numbers are dependent on theorem numbers
+\newtheorem*{defn*}{Definizione} % definition numbers are dependent on theorem numbers
 \newtheorem{exmp}[thm]{Esempio} % same for example numbers
 
 \begin{document}
@@ -100,18 +100,18 @@ Grazie a queste proprietà la classe di distribuzioni Normali Asimmetriche permet
 La definizione della famiglia di distribuzioni Normale Asimmetrica multivariata nel campo pratico è stata estremamente rilevante in quanto, nel caso multivariato, il numero di distribuzioni capaci di modellare leggere asimmetrie per le distribuzioni marginali è estremamente ridotto; inoltre la famiglia Normale Asimmetrica multivariata presenta una grandissima flessibilità grazie al parametro di regolarizzazione permettendo quindi un'ottima capacità di adattamento a diversi tipi di dati. 
 La generalizzazione multivariata della famiglia Normale Asimmetrica fornita da Azzalini e Dalla Valle permette di ottenere una distribuzione le cui marginali sono a loro volta delle distribuzioni Normali Asimmetriche. 
 
-\begin{defn}
+\begin{defn*}
 (Azzalini e Dalla Valle, 1996) una variabile continua $p$-dimensionale $Z$ è detta avere distribuzione Normale Asimmetrica multivariata ($Z\sim SN_p(\overline{\Omega},\alpha)$) se è continua e ha funzione di densità
 $$
 2 \phi_p(z;\overline{\Omega})\Phi(\alpha^\top z) \qquad (z \in \Re)
 $$
-\end{defn}
+\end{defn*}
 
 Il parametro di regolarizzazione $\alpha$ è detto in questo caso parametro di forma e permette di regolare asimmetria e curtosi. Con $\alpha=0$ si ottiene la distribuzione Normale Multivariata con matrice di correlazione $\overline{\Omega}$.
 Questa definizione assume $\mu=0$, per questo Azzalini nel 2005 propone una generalizzazione con l'introduzione di un parametro di posizione ($\xi$ di dimensione $p\times 1$) e uno di scala ($\omega$ matrice diagonale di dimensione $p \times p$). L'introduzione del parametro di posizione $\xi$ permette di centrare la distribuzione in un valore diverso da $0$. 
 
-\begin{thm}
-(Azzalini e Capitanio, 1999) Sia $Z$ una variabile Normale Asimmetrica $p$-dimensionale, si ottiene che $Y=\xi+\omega Z$ con $\xi=(\xi_1,\ldots,\xi_p)^\top$ e $\omega=diag(\omega_1,\ldots,\omega_p)$ ha funzione di densità
+\begin{thm}[Azzalini e Capitanio, 1999]
+ Sia $Z$ una variabile Normale Asimmetrica $p$-dimensionale, si ottiene che $Y=\xi+\omega Z$ con $\xi=(\xi_1,\ldots,\xi_p)^\top$ e $\omega=diag(\omega_1,\ldots,\omega_p)$ ha funzione di densità
 
 $$
 2 \phi_p((y-\xi);\Omega)\Phi(\alpha^\top \omega^{-1}(y-\xi)) \qquad (z \in \Re)
@@ -126,8 +126,8 @@ con $\phi_p((y-\xi);\Omega)$ densità di una normale con media $\xi$ e matrice di
 
 Azzalini e Dalla Valle (1996) hanno calcolato la funzione generatrice dei momenti nel caso in cui $Y\sim SN_p(\Omega,\alpha)$
 
-\begin{thm}
-(Azzalini e Dalla Valle, 1996) Sia $Z$ una variabile Normale Asimmetrica $p$-dimensionale con $Z\sim SN_p(\Omega,\alpha)$, allora la funzione generatrice dei momenti per $Z$ è pari a:
+\begin{thm}[Azzalini e Dalla Valle, 1996]
+ Sia $Z$ una variabile Normale Asimmetrica $p$-dimensionale con $Z\sim SN_p(\Omega,\alpha)$, allora la funzione generatrice dei momenti per $Z$ è pari a:
 
 $$
 \begin{array}{rcl}
@@ -145,8 +145,8 @@ $$
 
 Grazie a questo teorema Genton nel 2001 calcolata i primi quattro momenti per una distribuzione Normale Asimmetrica $p$-variata 
 
-\begin{thm}
-(Genton et al., 2001): Sia $Z$ un vettore casuale con distribuzione $Z\sim SN_p(\alpha,\Omega)$, allora:
+\begin{thm}[Genton et al., 2001]
+ Sia $Z$ un vettore casuale con distribuzione $Z\sim SN_p(\alpha,\Omega)$, allora:
 
 $$
 \begin{array}{rcl}
@@ -160,16 +160,16 @@ $$
 
 Generalizzando i momenti per gli una distribuzione con parametro di posizione $\xi\neq 0$ Genton (2001) calcola i primi quattro momenti non centrati per la distribuzione $Y\sim SN_p(\xi,\Omega,\alpha)$ 
 
-\begin{thm}
-(Azzalini, 2005): Sia $Y$ un vettore casuale con distribuzione $Y\sim SN_p(\xi,\Omega,\alpha)$, allora la funzione generatrice dei momenti per $Y$ è:
+\begin{thm}[Azzalini, 2005]
+ Sia $Y$ un vettore casuale con distribuzione $Y\sim SN_p(\xi,\Omega,\alpha)$, allora la funzione generatrice dei momenti per $Y$ è:
 
 $$
 M(t)= 2\exp(\xi^\top t + \frac{1}{2} t^\top \Omega t)\Phi(\delta^\top t) \qquad (t \in \Re^p)
 $$
 \end{thm}  
 
-\begin{thm}
-(Genton et al., 2001): Sia $Y$ un vettore casuale con distribuzione $Y\sim SN_p(\xi,\Omega,\alpha)$, allora i primi quattro momenti di $Y$ sono:
+\begin{thm}[Genton et al., 2001]
+ Sia $Y$ un vettore casuale con distribuzione $Y\sim SN_p(\xi,\Omega,\alpha)$, allora i primi quattro momenti di $Y$ sono:
 
 $$
 \begin{array}{rcl}
@@ -196,8 +196,24 @@ $$
 \chapter{Indici di Curtosi per la Normale Asimmetrica multidimensionale} %------------------------------ CHAPTER TITLE
 Nella descrizione descrizione delle caratteristiche di una distribuzione, oltre agli indici di posizione, variabilità globale e asimmetria è utile definire anche un indice di curtosi. Etimologicamente la parola deriva dal greco $\kappa\upsilon\rho\tau\acute{o}\varsigma$ che significa "curvo, arcuato". In generale la curtosi è un indice di forma della curva definito usualmente come rapporto tra la lontananza delle osservazioni dall'indice di posizione rispetto alla sua distanza media, permettendo di definire la pesantezza delle code di una distribuzione. L'indice di curtosi calcola quindi l'allontanamento dalla normalità distributiva a parità di media e varianza, verificando un maggior appiattimento (distribuzione platicurtica) o un maggior appuntimento (distribuzione leptocurtica) della distribuzione. È importante tenere conto però del fatto che oltre a dipendere dall'andamento delle code della distribuzione l'indice di curtosi dipende anche dal comportamento della stessa nella sua parte centrale, un ispessimento delle code della distribuzione porterà ad un minor numero di osservazioni nella parte centrale della distribuzione e viceversa code meno spesse portano ad un maggior numero di osservazioni nella parte centrale in quanto l'integrale della densità deve valere sempre $1$. La complessità di questo fenomeno ha portato negli anni alla definizione di vari indici per il calcolo della curtosi. 
 
-Nel caso multidimensionale si ha un aumento della complessità di questo indice poiché è intrinsecamente connesso con le altre caratteristiche della distribuzione come la pesantezza delle code, la variabilità e l'asimmetria, inoltre la presenza di più dimensioni connesse tra loro complica l'interpretazione di questo indice 
+Nel caso multidimensionale si ha un aumento della complessità di questo indice poiché è intrinsecamente connesso con le altre caratteristiche della distribuzione come la pesantezza delle code, la variabilità e l'asimmetria, inoltre la presenza di più dimensioni connesse tra loro ne complica l'interpretazione. Risulta però più utile il calcolo della curtosi nel caso multidimensionale perché permette una descrizione più accurata della distribuzione insieme agli altri indici in quanto la visualizzazione grafica risulta complicata quando il numero di dimensioni è maggiore di $3$. Vista l'importanza di questo fenomeno e la sua natura estremamente articolata sono stati proposti in letteratura vari indici, ognuno dei quali analizza aspetti diversi della curtosi visto che la risulta difficile cogliere il fenomeno nella sua interezza. 
+
+Gli indici in questione possono essere suddivisi in due categorie principali:
+\begin{itemize}
+\setlength\itemsep{1em}
+	\item indici riassuntivi che calcolano un unico valore complessivo per la curtosi;
+	\item indici direzionali che permettono di identificare la curtosi per le varie direzioni della distribuzione.
+\end{itemize}  
+ 
+I primi cercano di identificare un allontanamento generale dalla normalità distributiva mentre i secondi mirano ad individuare la direzione su cui avviene questo allontanamento. Di seguito sono riportati gli indici identificati per una distribuzione Normale Asimmetrica multidimensionale (Zanotto, 2012). 
+
 \section{L'indice di Mardia}
+L'indice di Mardia (1970) è uno degli indici più conosciuti per il calcolo della curtosi. Si tratta di un indice scalare che può essere considerato come la generalizzazione multivariata dell'indice di Pearson.
+
+\begin{defn*}
+(Mardia, 1970): 
+\end{defn*}
+
 \section{L'indice di Malkovich-Afifi}
 \section{Il nuovo indice direzionale}
 \section{L'indice di Srivastava}
