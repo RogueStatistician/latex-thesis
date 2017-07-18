@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.5.24)  12 JUL 2017 15:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.5.24)  17 JUL 2017 14:13
 entering extended mode
 **./template-thesis.tex
 (template-thesis.tex
@@ -123,6 +123,12 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 \WF@box=\box28
 \WF@everypar=\toks19
 Package: wrapfig 2003/01/31  v 3.6
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\wasysym\wasysym.sty"
+Package: wasysym 2003/10/30 v2.0 Wasy-2 symbol support package
+\symwasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
+(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 90.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
 Package: amsthm 2015/03/04 v2.20.2
@@ -328,22 +334,22 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 (template-thesis.aux)
 \openout1 = `template-thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Info: Redefining \it@ocap on input line 43.
-LaTeX Info: Redefining \it@ccap on input line 43.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Info: Redefining \it@ocap on input line 44.
+LaTeX Info: Redefining \it@ccap on input line 44.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -373,7 +379,7 @@ G,.JBIG2,.JB2,.eps]
 )
 \c@lstlisting=\count125
 \AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring ON on input line 43.
+Package hyperref Info: Link coloring ON on input line 44.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -383,9 +389,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count126
 )
-LaTeX Info: Redefining \ref on input line 43.
-LaTeX Info: Redefining \pageref on input line 43.
-LaTeX Info: Redefining \nameref on input line 43.
+LaTeX Info: Redefining \ref on input line 44.
+LaTeX Info: Redefining \pageref on input line 44.
+LaTeX Info: Redefining \nameref on input line 44.
 
 (template-thesis.out) (template-thesis.out)
 \@outlinefile=\write3
@@ -404,7 +410,11 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 4.
+LaTeX Font Info:    Try loading font information for U+wasy on input line 4.
 
+("C:\Program Files\MiKTeX 2.9\tex\latex\wasysym\uwasy.fd"
+File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
+)
 Overfull \hbox (13.34035pt too wide) in paragraph at lines 6--6
  [][] [][][]\T1/cmr/m/n/12 Le pro-prie-tà sta-ti-sti-che del-la di-stri-bu-zio-
 ne Nor-ma-le Asim- 
@@ -422,49 +432,43 @@ ne Nor-ma-le Asim-
 ]
 Capitolo 1.
 
-LaTeX Warning: Citation `multi' on page 1 undefined on input line 86.
+LaTeX Warning: Citation `multi' on page 1 undefined on input line 87.
 
 
-LaTeX Warning: Citation `uni' on page 1 undefined on input line 86.
+LaTeX Warning: Citation `uni' on page 1 undefined on input line 87.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 90.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 91.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 90.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 91.
 
 
-LaTeX Warning: Citation `scarpa' on page 1 undefined on input line 96.
+LaTeX Warning: Citation `scarpa' on page 1 undefined on input line 97.
 
 
-LaTeX Warning: Citation `lucia' on page 1 undefined on input line 96.
+LaTeX Warning: Citation `lucia' on page 1 undefined on input line 97.
 
 [1
 
 ]
-Overfull \hbox (21.3823pt too wide) in paragraph at lines 104--105
-[]\T1/cmr/bx/n/12 Definizione. []\T1/cmr/m/n/12 (Az-za-li-ni e Dal-la Val-le, 1
-996) una va-ria-bi-le con-ti-nua $\OML/cmm/m/it/12 p$\T1/cmr/m/n/12 -dimensiona
-le
+Overfull \hbox (24.05107pt too wide) in paragraph at lines 105--106
+[]\T1/cmr/bx/n/12 Definizione \T1/cmr/m/n/12 (Az-za-li-ni e Dal-la Val-le, 1996
+)\T1/cmr/bx/n/12 . []\T1/cmr/m/n/12 Una va-ria-bi-le con-ti-nua $\OML/cmm/m/it/
+12 p$\T1/cmr/m/n/12 -dimensionale
  []
 
 
-Overfull \hbox (21.81177pt too wide) in paragraph at lines 104--105
+Overfull \hbox (21.81177pt too wide) in paragraph at lines 105--106
 \OML/cmm/m/it/12 Z$ \T1/cmr/m/n/12 è det-ta ave-re di-stri-bu-zio-ne Nor-ma-le 
 Asim-me-tri-ca mul-ti-va-ria-ta ($\OML/cmm/m/it/12 Z \OMS/cmsy/m/n/12  \OML/cm
 m/m/it/12 SN[]\OT1/cmr/m/n/12 ([]\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 )$\T1/cmr/
 m/n/12 )
  []
 
-
-Overfull \hbox (102.30586pt too wide) has occurred while \output is active
-\T1/cmr/m/n/12 2 \T1/cmr/m/sl/12 CAPITOLO 1.  LA DISTRIBUZIONE NORMALE ASIMMETR
-ICA MULTIDIMENSIONALE
- []
-
 [2]
-Overfull \hbox (62.86201pt too wide) detected at line 188
+Overfull \hbox (62.86201pt too wide) detected at line 189
 []
  []
 
@@ -478,65 +482,118 @@ mr/m/n/12 3
 Capitolo 2.
 [5
 
-] [6]
-Capitolo 3.
-[7
+]
+Overfull \hbox (144.70969pt too wide) has occurred while \output is active
+\T1/cmr/m/n/12 6 \T1/cmr/m/sl/12 CAPITOLO 2.  INDICI DI CURTOSI PER LA NORMALE 
+ASIMMETRICA MULTIDIMENSIONALE
+ []
 
-] [8
+[6]
+Overfull \hbox (13.08493pt too wide) in paragraph at lines 240--241
+[]\T1/cmr/m/n/12 con $\OML/cmm/m/it/12 [] \OT1/cmr/m/n/12 = []\OML/cmm/m/it/12
+ $ \T1/cmr/m/n/12 il va-lo-re at-te-so va-ria-bi-le ca-sua-le $\OML/cmm/m/it/1
+2 Z \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 !\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Y \OM
+S/cmsy/m/n/12   \OML/cmm/m/it/12 \OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12  \OML/cmm
+/m/it/12 SN[]\OT1/cmr/m/n/12 (0\OML/cmm/m/it/12 ; []; \OT1/cmr/m/n/12 )$\T1/cm
+r/m/n/12 .
+ []
+
+
+Overfull \hbox (11.35156pt too wide) in paragraph at lines 247--248
+[]\T1/cmr/bx/n/12 Definizione \T1/cmr/m/n/12 (Mal-ko-vich e Afi-fi, 1973)\T1/cm
+r/bx/n/12 . []\T1/cmr/m/n/12 Sia $[][]$ una sfe-ra uni-ta-ria $\OML/cmm/m/it/12
+ p$\T1/cmr/m/n/12 -dimensionale
+ []
+
+[7]
+Overfull \hbox (20.50877pt too wide) in paragraph at lines 278--279
+[]\T1/cmr/m/n/12 Questo in-di-ce è ba-sa-to sul mo-men-to cen-tra-to di quar-to
+ or-di-ne $\OML/cmm/m/it/12 E [][]$\T1/cmr/m/n/12 .
+ []
+
+
+Overfull \hbox (65.06355pt too wide) detected at line 297
+[]
+ []
+
+
+Overfull \hbox (144.70969pt too wide) has occurred while \output is active
+\T1/cmr/m/n/12 8 \T1/cmr/m/sl/12 CAPITOLO 2.  INDICI DI CURTOSI PER LA NORMALE 
+ASIMMETRICA MULTIDIMENSIONALE
+ []
+
+[8]
+Overfull \hbox (41.38408pt too wide) detected at line 325
+[]
+ []
+
+[9]
+Overfull \hbox (41.38408pt too wide) detected at line 356
+[]
+ []
+
+[10]
+Capitolo 3.
+[11
+
+] [12
 
 ]
 Capitolo 4.
-[9] [10
+[13] [14
 
-] [11
+]
+Appendice A.
+[15] [16]
+Appendice B.
+[17
 
-
-] [12] [13
-
-] [14
+] [18
 
 ]
 No file template-thesis.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 247.
-[15]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 247.
- (template-thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 247.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 247.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 429.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 429.
+(template-thesis.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 429.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 429.
 Package rerunfilecheck Info: File `template-thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 8E3D59D9AEFE142A0F6748C07634EB77;1401.
+(rerunfilecheck)             Checksum: 0F1BA995DAC267912CADDAE0D962C712;1594.
 
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 8578 strings out of 493328
- 120583 string characters out of 3139124
- 237507 words of memory out of 3000000
- 11953 multiletter control sequences out of 15000+200000
- 14055 words of font info for 33 fonts, out of 3000000 for 9000
+ 8770 strings out of 493328
+ 122581 string characters out of 3139124
+ 239115 words of memory out of 3000000
+ 12128 multiletter control sequences out of 15000+200000
+ 15396 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,8n,49p,1448b,416s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,10n,49p,1448b,416s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\simon\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
-ecbx1440.pk> <C:\Users\simon\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
-ec\dpi600\ecbx1728.pk> <C:\Users\simon\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
-\jknappen\ec\dpi600\ecsl1200.pk> <C:\Users\simon\AppData\Local\MiKTeX\2.9\fonts
-\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\simon\AppData\Local\MiKTeX
-\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\simon\AppData\Lo
-cal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\simon\
-AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on template-thesis.pdf (21 pages, 225967 bytes).
+ecbi1728.pk> <C:\Users\simon\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\wa
+sy\dpi720\wasy10.pk> <C:\Users\simon\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\j
+knappen\ec\dpi600\ecbx1440.pk> <C:\Users\simon\AppData\Local\MiKTeX\2.9\fonts\p
+k\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\simon\AppData\Local\MiKTeX\2
+.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsl1200.pk> <C:\Users\simon\AppData\Loca
+l\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\simon\Ap
+pData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\User
+s\simon\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk
+> <C:\Users\simon\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
+crm1200.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmsy8.pfb>
+Output written on template-thesis.pdf (24 pages, 267266 bytes).
 PDF statistics:
- 538 PDF objects out of 1000 (max. 8388607)
- 45 named destinations out of 1000 (max. 500000)
- 145 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 590 PDF objects out of 1000 (max. 8388607)
+ 51 named destinations out of 1000 (max. 500000)
+ 161 words of extra memory for PDF output out of 10000 (max. 10000000)
 

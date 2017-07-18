@@ -6,6 +6,7 @@
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{wrapfig}
+\usepackage{wasysym}
 \usepackage{amsthm}
 \usepackage[toc,page]{appendix}
 %------------------------------ colors
@@ -81,8 +82,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis tincidunt l
 
 \mainmatter
 
-\chapter{La distribuzione Normale Asimmetrica multidimensionale} %------------------------------ INTRODUCTION
-
+\chapter{La distribuzione Normale Asimmetrica} %------------------------------ INTRODUCTION
+%\markboth{\uppercase{\textit{\chaptername~\thechapter.Normale Asimmetrica Multidimensionale}}}{}
 Definita da A. Azzalini e A. Dalla Valle nel 1996 \cite{multi} come generalizzazione della corrispettiva classe di distribuzioni univariata proposta da Azzalini nel 1985 \cite{uni} la famiglia di distribuzioni Normale Asimmetrica multidimensionale presenta proprietà ideali tra cui:
 
 \begin{itemize}
@@ -100,8 +101,8 @@ Grazie a queste proprietà la classe di distribuzioni Normali Asimmetriche permet
 La definizione della famiglia di distribuzioni Normale Asimmetrica multivariata nel campo pratico è stata estremamente rilevante in quanto, nel caso multivariato, il numero di distribuzioni capaci di modellare leggere asimmetrie per le distribuzioni marginali è estremamente ridotto; inoltre la famiglia Normale Asimmetrica multivariata presenta una grandissima flessibilità grazie al parametro di regolarizzazione permettendo quindi un'ottima capacità di adattamento a diversi tipi di dati. 
 La generalizzazione multivariata della famiglia Normale Asimmetrica fornita da Azzalini e Dalla Valle permette di ottenere una distribuzione le cui marginali sono a loro volta delle distribuzioni Normali Asimmetriche. 
 
-\begin{defn*}
-(Azzalini e Dalla Valle, 1996) una variabile continua $p$-dimensionale $Z$ è detta avere distribuzione Normale Asimmetrica multivariata ($Z\sim SN_p(\overline{\Omega},\alpha)$) se è continua e ha funzione di densità
+\begin{defn*}[Azzalini e Dalla Valle, 1996]
+ Una variabile continua $p$-dimensionale $Z$ è detta avere distribuzione Normale Asimmetrica multivariata ($Z\sim SN_p(\overline{\Omega},\alpha)$) se è continua e ha funzione di densità
 $$
 2 \phi_p(z;\overline{\Omega})\Phi(\alpha^\top z) \qquad (z \in \Re)
 $$
@@ -152,7 +153,7 @@ $$
 \begin{array}{rcl}
 M_1 & = & \sqrt{\frac{2}{\pi}}\delta \\
 M_2 & = & \Omega \\
-M_3 & = & \sqrt{\frac{2}{\pi}}\left[\delta \otimes \Omega + vec{\Omega}\delta^\top + \left( I_p \otimes \delta \right) \Omega - \left( I_p \otimes \delta \right)\left( \delta \otimes \delta^\top \right)  \right] \\
+M_3 & = & \sqrt{\frac{2}{\pi}}\left[\delta \otimes \Omega + vec(\Omega)\delta^\top + \left( I_p \otimes \delta \right) \Omega - \left( I_p \otimes \delta \right)\left( \delta \otimes \delta^\top \right)  \right] \\
 M_4 & = & (I_{p^2} + U_{p,p})(\Omega \otimes \Omega) + vec(\Omega)vec(\Omega^\top)
 \end{array}
 $$ 
@@ -174,7 +175,7 @@ $$
 $$
 \begin{array}{rcl}
 M_1 & = & \xi+\sqrt{\frac{2}{\pi}}\delta \\
-M_2 & = & \Omega + \xi \xi^\top + \sqrt{\frac{2}{\pi}}\left(\xi \delta^\top + \delta\xi^top\right)\\
+M_2 & = & \Omega + \xi \xi^\top + \sqrt{\frac{2}{\pi}}\left(\xi \delta^\top + \delta\xi^\top\right)\\
 M_3 & = & \Omega\otimes\xi+\xi\otimes \Omega + vec(\Omega) \otimes \xi^\top + \xi \otimes \xi^\top \otimes \xi + \sqrt{\frac{2}{\pi}}[\delta \otimes \Omega + vec(\Omega)\delta^\top \\
 & & + \left( I_p \otimes \delta \right) \Omega - \delta \otimes \delta^\top \otimes \delta + \delta \otimes \xi^\top \otimes \xi + \xi \otimes \delta^\top \otimes \xi + \xi \otimes \xi^\top \otimes \delta ] \\
 M_4 & = & \Omega \otimes \xi \otimes \xi^\top + \xi \otimes \Omega \otimes \xi^\top + vec(\Omega)\otimes \xi^\top \otimes \xi^\top + \xi \otimes \xi^\top \otimes \xi \otimes \xi^\top + \Omega \otimes \Omega \\
@@ -205,20 +206,156 @@ Gli indici in questione possono essere suddivisi in due categorie principali:
 	\item indici direzionali che permettono di identificare la curtosi per le varie direzioni della distribuzione.
 \end{itemize}  
  
-I primi cercano di identificare un allontanamento generale dalla normalità distributiva mentre i secondi mirano ad individuare la direzione su cui avviene questo allontanamento. Di seguito sono riportati gli indici identificati per una distribuzione Normale Asimmetrica multidimensionale (Zanotto, 2012). 
-
+I primi cercano di identificare un allontanamento generale dalla normalità distributiva mentre i secondi mirano ad individuare la direzione su cui avviene questo allontanamento. Di seguito sono riportati gli indici identificati per una distribuzione Normale Asimmetrica multidimensionale (Zanotto, 2012). Tutti gli indici si riferiscono ad una variabile casuale $Y\sim SN_p(\xi,\Omega,\alpha)$ con media
+$$
+E(Y)=\xi+\mu
+$$
+e varianza
+$$
+Var(Y)=\Omega-\mu\mu^\top
+$$
+con $\mu=\omega\sqrt{\frac{2}{\pi}}\delta$
 \section{L'indice di Mardia}
 L'indice di Mardia (1970) è uno degli indici più conosciuti per il calcolo della curtosi. Si tratta di un indice scalare che può essere considerato come la generalizzazione multivariata dell'indice di Pearson.
 
-\begin{defn*}
-(Mardia, 1970): 
+\begin{defn*}[Mardia, 1970]
+Sia $X=\left(X_1,\ldots,X_p\right)^\top$ un vettore casuale $p$-dimensionale con media $\mu=E(X)$ e matrice di varianze e covarianze non singolare $\Sigma=E((X-\mu)(X-\mu)^\top)$, allora l'indice di curtosi è definito come:
+$$
+\beta_{2,p}=E\left[(X-\mu)^\top\Sigma^{-1}(X-\mu)\right]^2
+$$
 \end{defn*}
 
+Come per l'indice di Pearson si ottiene un valore di riferimento di $p(p+1)$ con $p$ numero di dimensioni ottenuto come valore di $\beta_{2,p}$ per una distribuzione Normale multidimensionale. Si ottiene quindi per $\beta_{2,p}>p(p+1)$ una distribuzione leptocurtica e per $\beta_{2,p}<p(p+1)$ una distribuzione platicurtica. L'indice può essere centrato come per l'indice di Pearson come
+
+$$
+\gamma_{2,p}=\beta_{2,p}-p(p+1)
+$$
+
+Per la distribuzione Normale Asimmetrica multidimensionale si ottiene:
+
+$$
+\gamma_{2,p}=\beta_{2,p}-p(p+1)=2(\pi-3)\left(\frac{\mu_Z^\top\overline{\Omega}^{-1}\mu_Z}{1-\mu_Z^\top\overline{\Omega}^{-1}\mu_Z}\right)
+$$
+
+con $\mu_Z=\sqrt{\frac{2}{\pi}}\delta$ il valore atteso variabile casuale $Z=\omega(Y-\xi)\sim SN_p(0,\overline{\Omega},\alpha)$. L'indice viene calcolato per una variabile casuale Normale Asimmetrica standardizzata, questo perchè risulta invariante rispetto a trasformazioni non singolari, di conseguenza $\xi$ e $\omega$ non influenzano il risultato.
+
 \section{L'indice di Malkovich-Afifi}
+
+Malkovich e Afifi (1973) hanno introdotto un modo diverso di misurare la curtosi nell'ambito multidimensionale calcolando la curtosi in ogni direzione della curva e considerando il massimo di questi valori.
+
+\begin{defn*}[Malkovich e Afifi, 1973]
+Sia $\diameter_p$ una sfera unitaria $p$-dimensionale definita come $\diameter_p=\{x \in \Re^p : |x| = 1\}$, allora la variabile casuale $p$-dimensionale $Y$ ha curtosi nella direzione $u \in \diameter_p$ definita come:
+
+$$
+\left[\beta_2(u)\right]^2= \left[ \frac{E[(u^\top Y-u^\top E(Y))^4]}{Var(u^\top Y)^2}\right]^2 > 9
+$$
+allora l'indice di curtosi è definito come:
+$$
+\left(\beta_2^*\right)^2=\sup_{u\in \diameter_p} \left[\beta_2(u)-3 \right]^2
+$$
+\end{defn*}
+
+Come si può notare dalla definizione questo indice fa riferimento all'indice di Mardia unidimensionale ($p=1$) calcolato per ogni direzione ed elevato al quadrato. Anche questo indice è di tipo scalare in quanto restituisce un solo valore riassuntivo di curtosi. 
+
+Per la distribuzione Normale Asimmetrica multidimensionale questo indice risulterà uguale a $0$ per tutte le direzioni tranne quella che presenta non normalità. Risulterà quindi che l'indice di Malkovich-Afifi, scegliendo il massimo valore tra quelli calcolati elevato al quadrato, esso sarà pari al quadrato dell'indice di Mardia:
+
+$$
+\gamma_{2}=\left[\beta_{2,p}-p(p+2)\right]^2=\left[2(\pi-3)\left(\frac{\mu_Z^\top\overline{\Omega}^{-1}\mu_Z}{1-\mu_Z^\top\overline{\Omega}^{-1}\mu_Z}\right)\right]^2
+$$
+
 \section{Il nuovo indice direzionale}
 \section{L'indice di Srivastava}
+L'indice di Srivastava è basato sul metodo delle componenti principali. 
+
+\begin{defn*}[Srivastava, 1984]
+sia $Y$ una variabile casuale multidimensionale con media $\mu$ con matrice di varianze e covarianze $\Sigma$; sia $\Gamma=(\gamma_1,\ldots,\gamma_p)$ una matrice ortogonale tale che $\Gamma^\top\Sigma\Gamma=I_p(\lambda)$, con $I_p(\lambda)=diag(\lambda_1,\ldots,\lambda_p)$ gli autovalori della matrice $\Sigma$. Definiamo $F=\Gamma Y$ e $\theta=\Gamma\mu$, allora l'indice di curtosi è pari a:
+
+$$
+\beta_{2,p\times p}=\frac{1}{p}\sum_{i=1}^{p}\left\{ \frac{E(F_i-\theta)^4}{\lambda_i^2}\right\}=\frac{1}{p}\sum_{i=1}^{p}\left\{ \frac{E\left[\gamma_i^\top(Y-\mu)\right]^4}{\lambda_i^2}\right\}
+$$
+\end{defn*}
+
+Questo indice è basato sul momento centrato di quarto ordine $E\left[\gamma_i^\top(Y-\mu)\right]^4$. Per calcolare questo è invece possibile centrare la variabile ricordificando $X=Y-\mu$ e calcolare il momento quarto non centrato per $X$. Utilizzando trasformazioni affini dei momenti si ottiene:
+$$
+E\left[\gamma_i^\top X\right]^4=(\gamma_i^\top \otimes \gamma_i^\top)M_4(\gamma_i\otimes\gamma_i)
+$$
+
+Per calcolare questo indice per una variabile casuale Normale Asimmetrica multidimensionale è sufficiente sostituire il momento non centrato di quarto ordine con quello della Normale Asimmetrica multidimensionale (paragrafo 1.1.1) dopo aver centrato la variabile $Y$. Si ottiene quindi:
+$$
+\begin{array}{lll}
+E[\gamma_i^\top(X)]^4 & = & (\gamma_i^\top \otimes \gamma_i^\top)M_4(\gamma_i\otimes\gamma_i) \\
+& = & (\gamma_i^\top \otimes \gamma_i^\top) (\Omega \otimes \xi \otimes \xi^\top + \xi \otimes \Omega \otimes \xi^\top + vec(\Omega)\otimes \xi^\top \otimes \xi^\top\\
+& & + \xi \otimes \xi^\top \otimes \xi \otimes \xi^\top + \Omega \otimes \Omega + vec(\Omega)vec(\Omega)^\top + U_{p,p}(\Omega \otimes \Omega) \\
+& & + \xi^\top \otimes \Omega \otimes \xi + \xi \otimes \xi \otimes vec(\Omega)^\top + \xi \otimes \xi^\top \otimes \Omega  + \sqrt{\frac{2}{\pi}}[\delta \otimes \Omega \otimes \xi^\top \\
+& & + vec(\Omega)\otimes\delta^\top\otimes\xi^\top+((I_p \otimes \delta)\Omega)\otimes\xi^\top + \delta \otimes \xi^\top \otimes \xi \otimes \xi^\top \\
+& & + \xi \otimes \delta^\top \otimes \xi \otimes \xi^\top + \xi \otimes \xi^\top \otimes \delta \otimes \xi^\top + \delta^\top \otimes \Omega \otimes \xi + \delta \otimes vec(\Omega)^\top \otimes \xi  \\
+& & + (\Omega(I_p\otimes\delta^\top))\otimes\xi+\xi^\top\otimes\delta\otimes\Omega+\xi^\top\otimes(vec(\Omega)\delta^\top)+\xi^\top\otimes((I_p\otimes\delta)\Omega)\\
+& & +\xi\otimes\delta^\top\otimes\Omega+\xi\otimes\delta\otimes vec(\Omega)^\top + \xi\otimes(\Omega(I_p\otimes\delta^\top))+\xi\otimes\xi^\top\otimes\delta\otimes\delta^\top\\
+& & -\delta\otimes\delta^\top\otimes\delta\otimes\xi^\top-\delta^\top\otimes\delta\otimes\delta^\top\otimes\xi-\xi^\top\otimes\delta\otimes\delta^\top\otimes\delta\\
+& & -\xi\otimes\delta^\top\otimes\delta\otimes\delta^\top])(\gamma_i\otimes\gamma_i)
+\end{array}
+$$
 \section{L'indice di Mori-Rohatgi-Székeley}
+Mori e coautori (1993) introducono un ulteriore indice di curtosi multivariato in forma matriciale. L'indice utilizza una variabile Z standardizzata
+
+\begin{defn*}[Mori,Rohatgi e Székeley, 1993]
+sia $X$ una variabile casuale $p$-dimensionale con matrice di varianze e covarianze $\Sigma$ non singolare. Definiamo $Y=\Sigma^{-1}(X-E(X))$, allora l'indice di curtosi è pari a:
+$$
+K(X)=E(Y Y^\top Y Y^\top)-(p+2)I_p
+$$
+L'indice può essere riscritto utilizzando il prodotto \textit{star} come definito da Kollo (2008)
+$$
+K(X)=I_p \star M_4(Y) - (p+2)I_p
+$$
+\end{defn*}
+Utilizzando il momento quarto calcolato da Genton e coautori (2001) descritto nel paragrafo 1.1.1 è possibile ottenere l'indice per la distribuzione Normale Asimmetrica multidimensionale come:
+
+$$
+\begin{array}{lll}
+K(X) &= &I_p\star(\Omega \otimes \xi \otimes \xi^\top + \xi \otimes \Omega \otimes \xi^\top + vec(\Omega)\otimes \xi^\top \otimes \xi^\top\\
+& & + \xi \otimes \xi^\top \otimes \xi \otimes \xi^\top + \Omega \otimes \Omega + vec(\Omega)vec(\Omega)^\top + U_{p,p}(\Omega \otimes \Omega) \\
+& & + \xi^\top \otimes \Omega \otimes \xi + \xi \otimes \xi \otimes vec(\Omega)^\top + \xi \otimes \xi^\top \otimes \Omega  + \sqrt{\frac{2}{\pi}}[\delta \otimes \Omega \otimes \xi^\top \\
+& & + vec(\Omega)\otimes\delta^\top\otimes\xi^\top+((I_p \otimes \delta)\Omega)\otimes\xi^\top + \delta \otimes \xi^\top \otimes \xi \otimes \xi^\top \\
+& & + \xi \otimes \delta^\top \otimes \xi \otimes \xi^\top + \xi \otimes \xi^\top \otimes \delta \otimes \xi^\top + \delta^\top \otimes \Omega \otimes \xi + \delta \otimes vec(\Omega)^\top \otimes \xi  \\
+& & + (\Omega(I_p\otimes\delta^\top))\otimes\xi+\xi^\top\otimes\delta\otimes\Omega+\xi^\top\otimes(vec(\Omega)\delta^\top)+\xi^\top\otimes((I_p\otimes\delta)\Omega)\\
+& & +\xi\otimes\delta^\top\otimes\Omega+\xi\otimes\delta\otimes vec(\Omega)^\top + \xi\otimes(\Omega(I_p\otimes\delta^\top))+\xi\otimes\xi^\top\otimes\delta\otimes\delta^\top\\
+& & -\delta\otimes\delta^\top\otimes\delta\otimes\xi^\top-\delta^\top\otimes\delta\otimes\delta^\top\otimes\xi-\xi^\top\otimes\delta\otimes\delta^\top\otimes\delta\\
+& & -\xi\otimes\delta^\top\otimes\delta\otimes\delta^\top])-(p+2)I_p
+\end{array}
+$$
+
+Come si può notare questo indice è calcolato utilizzando solo gli elementi diagonali della matrice dei momenti quarti non centrati $M_4$. Questo perchè l'utilizzo della matrice identità $I_p$ porta all'annullamento di tutti gli elementi non si trovano sulla diagonale di $M_4$ e ad un "collasso" degli altri elementi in una matrice di dimensione $p\times p$.
 \section{L'indice di Kollo}
+Kollo (2008) parte dalla considerazione che l'indice di Mardia non tiene conto dei momenti misti di quarto ordine nel calcolo della curtosi. Secondo questo autore, infatti, per avere un indice che descriva completamente la curtosi della variabile casuale bisogna considerare anche i momenti misti. Per questo Kollo descrive un nuovo indice
+
+\begin{defn*}[Kollo, 2008]
+sia $X$ una variabile casuale $p$-dimensionale e $Y=\Sigma^{-1/2}(X-E(X))$ con $\Sigma$ matrice di varianze e covarianze per la variabile casuale $X$, allora l'indice di curtosi può essere calcolato come:
+$$
+B(X)=\sum_{i,j=1}^{p}E(Y_iY_j)E(YY^\top )
+$$
+\end{defn*}
+Kollo dimostra inoltre che utilizzando il prodotto \textit{star} questo prodotto può essere riscritto come
+
+$$
+B(X)=\textbf{1}_{p\times p} \star M_4(Y)
+$$
+
+Come nei casi precedenti per la distribuzione Normale Asimmetrica multidimensionale è sufficiente sostituire la matrice $M_4$ presentata nel paragrafo 1.1.1  calcolata da Genton e coautori  ottenendo quindi:
+$$
+\begin{array}{lll}
+K(X) &= &\textbf{1}_{p\times p}\star(\Omega \otimes \xi \otimes \xi^\top + \xi \otimes \Omega \otimes \xi^\top + vec(\Omega)\otimes \xi^\top \otimes \xi^\top\\
+& & + \xi \otimes \xi^\top \otimes \xi \otimes \xi^\top + \Omega \otimes \Omega + vec(\Omega)vec(\Omega)^\top + U_{p,p}(\Omega \otimes \Omega) \\
+& & + \xi^\top \otimes \Omega \otimes \xi + \xi \otimes \xi \otimes vec(\Omega)^\top + \xi \otimes \xi^\top \otimes \Omega  + \sqrt{\frac{2}{\pi}}[\delta \otimes \Omega \otimes \xi^\top \\
+& & + vec(\Omega)\otimes\delta^\top\otimes\xi^\top+((I_p \otimes \delta)\Omega)\otimes\xi^\top + \delta \otimes \xi^\top \otimes \xi \otimes \xi^\top \\
+& & + \xi \otimes \delta^\top \otimes \xi \otimes \xi^\top + \xi \otimes \xi^\top \otimes \delta \otimes \xi^\top + \delta^\top \otimes \Omega \otimes \xi + \delta \otimes vec(\Omega)^\top \otimes \xi  \\
+& & + (\Omega(I_p\otimes\delta^\top))\otimes\xi+\xi^\top\otimes\delta\otimes\Omega+\xi^\top\otimes(vec(\Omega)\delta^\top)+\xi^\top\otimes((I_p\otimes\delta)\Omega)\\
+& & +\xi\otimes\delta^\top\otimes\Omega+\xi\otimes\delta\otimes vec(\Omega)^\top + \xi\otimes(\Omega(I_p\otimes\delta^\top))+\xi\otimes\xi^\top\otimes\delta\otimes\delta^\top\\
+& & -\delta\otimes\delta^\top\otimes\delta\otimes\xi^\top-\delta^\top\otimes\delta\otimes\delta^\top\otimes\xi-\xi^\top\otimes\delta\otimes\delta^\top\otimes\delta\\
+& & -\xi\otimes\delta^\top\otimes\delta\otimes\delta^\top])
+\end{array}
+$$
+Come per l'indice di Mori anche in questo caso avviene un "collasso" di alcuni elementi della matrice dei momenti quarti ma questi non vengono più annullati ma sommati tra di loro. In questo modo quindi manteniamo nell'indice di curtosi anche l'informazione relativa ai momenti misti della variabile ottenendo comunque una matrice di dimensioni $p \times p$. 
+
 \thispagestyle{empty}
 
 
@@ -227,14 +364,59 @@ L'indice di Mardia (1970) è uno degli indici più conosciuti per il calcolo della
 \thispagestyle{empty}
 
 \chapter{Conclusioni}
-\backmatter
 
-\begin{appendices}
-\chapter{Operatori Matematici}
+\appendix
+	\chapter{Operatori Matematici}
+	Di seguito vengono descritte alcune funzioni matematiche ed algebriche utilizzate per il calcolo degli indici.
+		\section{Operatore \textit{vec}}
+		Questo operatore viene definito da Neudecker (1969) ed è sempre associato ad una matrice $A$.
+		
+		\begin{defn*}[Graham, 1981]
+		se $A$ è una matrice di ordine $m \times n$, allora
+		$$
+		vec(A)=\left[\begin{array}{c}A_{\cdot 1}\\ \vdots \\ A_{\cdot n} \end{array}\right]
+		$$
+		\end{defn*}
+		Si ottiene quindi a partire da una matrice $A$ un vettore $m n \times 1$ che contiene tutti gli elementi delle colonne di $A$. 
+		
+		\section{Il prodotto di Kronecker}
+		Il prodotto di Kronecker, conosciuto anche come "prodotto diretto" o "prodotto tensoriale", è un concetto nato nell'ambito della fisica applicata ma ha avuto un forte successo in molti ambiti della teoria delle matrici ed è ad oggi largamente utilizzato. 
+		\begin{defn*}[Graham, 1981]
+		sia $A=[a_{ij}]$ una matrice di ordine $m\times n$ e $B=[b_{ij}]$ una matrice di ordine $r\times s$. Si dice prodotto di Kronecker di $A$ e $B$ e si scrive $A\otimes B$ la matrice:
+		$$
+		A\otimes B = \left[\begin{array}{cccc}
+		a_{11}B & a_{12}B & \ldots & a_{1n}B \\
+		a_{21}B & a_{22}B & \ldots & a_{2n}B \\
+		\vdots  & \vdots  & \ddots & \vdots  \\
+		a_{m1}B & a_{m2}B & \ldots & a_{mn}B \\		
+		\end{array}\right]
+		$$
+		\end{defn*}
+		La matrice risultante sarà una matrice di dimensione $mr\times ns$ a blocchi e ogni blocco $(i,j)$ è composto dalla matrice $a_{ij}B$ di ordine $r \times s$. Il prodotto di Kronecker è definito a prescindere dalla dimensione delle matrici coinvolte.
+		\section{Il prodotto \textit{star}}
+		Introdotto da MacRae nel 1974 il prodotto \textit{star} nasce nell'ambito della differenziazione di matrici per facilitare tale procedimento. 
+		\begin{defn*}[MacRae, 1974]
+		sia $A$ una matrice $m \times n$ e $B$ una matrice $mr \times ns$ suddivisa in sottomatrici $B_{ij}$ con $i=1,\ldots,m$ e $j=1,\ldots,n$ di dimensioni $r \times s$, allora il prodotto \textit{star} $A\star B$ applicato alle matrici $A$ e $B$ è pari alla matrice $r\times s$:
+		$$
+		A \star B = \sum_{i=1}^{m}\sum_{j=1}^{n} a_{ij}B_{ij}
+		$$
+		con $a_{ij}$ elemento generico della matrice $A$.
+		\end{defn*}
+		\section{La matrice di permutazione}
+		Per poter definire le matrici di permutazione è necessario introdurre il concetto di matrice elementare.
+		\begin{defn*}
+		si definisce matrice elementare $E_{ij}$ una matrice di ordine $m \times n$ che ha valore $1$ in posizione $(i,j)$ e $0$ in tutte le altre posizioni.
+		\end{defn*}
+		Adesso è possibile definire la matrice di permutazione $U_{n,n}$ come
+		\begin{defn*}
+		data una matrice elementare $E_{ij}$ di ordine $m\times n$ si dice matrice di permutazione la matrice $U$ di ordine $mn\times nm$ definita come:
+		$$
+		U_{mn,nm}=\sum_{i=1}^{m}\sum_{j=1}^{n} E_{ij}\otimes E_{ij}^\top
+		$$
+		\end{defn*}
+	\chapter{Codice R}
 The contents...
-\chapter{Codice R}
-The contents...
-\end{appendices}
+\backmatter
 
 \begingroup %------------------------------ BIBLIOGRAPHY
   \makeatletter
