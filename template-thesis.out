@@ -1,20 +1,21 @@
-\BOOKMARK [0][-]{chapter.1}{La distribuzione Normale Asimmetrica}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Distribuzione Normale Asimmetrica multidimensionale}{chapter.1}% 2
-\BOOKMARK [2][-]{subsection.1.1.1}{I primi quattro momenti della distribuzione Normale Asimmetrica multidimensionale}{section.1.1}% 3
-\BOOKMARK [2][-]{subsection.1.1.2}{Le propriet\340 statistiche della distribuzione Normale Asimmetrica multidimensionale}{section.1.1}% 4
-\BOOKMARK [0][-]{chapter.2}{Indici di Curtosi per la Normale Asimmetrica multidimensionale}{}% 5
-\BOOKMARK [1][-]{section.2.1}{L'indice di Mardia}{chapter.2}% 6
-\BOOKMARK [1][-]{section.2.2}{L'indice di Malkovich-Afifi}{chapter.2}% 7
-\BOOKMARK [1][-]{section.2.3}{Il nuovo indice direzionale}{chapter.2}% 8
-\BOOKMARK [1][-]{section.2.4}{L'indice di Srivastava}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.5}{L'indice di Mori-Rohatgi-Sz\351keley}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.6}{L'indice di Kollo}{chapter.2}% 11
-\BOOKMARK [0][-]{chapter.3}{Confronto tra le misure di Curtosi}{}% 12
-\BOOKMARK [1][-]{section.3.1}{Performance delle misure di Curtosi}{chapter.3}% 13
-\BOOKMARK [0][-]{chapter.4}{Conclusioni}{}% 14
-\BOOKMARK [0][-]{appendix.Alph1}{Operatori Matematici}{}% 15
-\BOOKMARK [1][-]{section.Alph1.1}{Operatore vec}{appendix.Alph1}% 16
-\BOOKMARK [1][-]{section.Alph1.2}{Il prodotto di Kronecker}{appendix.Alph1}% 17
-\BOOKMARK [1][-]{section.Alph1.3}{Il prodotto star}{appendix.Alph1}% 18
-\BOOKMARK [1][-]{section.Alph1.4}{La matrice di permutazione}{appendix.Alph1}% 19
+\BOOKMARK [0][-]{chapter.1}{La distribuzione Normale Asimmetrica multidimensionale}{}% 1
+\BOOKMARK [1][-]{section.1.1}{I primi quattro momenti della distribuzione Normale Asimmetrica multidimensionale}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Le propriet\340 statistiche della distribuzione Normale Asimmetrica multidimensionale}{chapter.1}% 3
+\BOOKMARK [0][-]{chapter.2}{Indici di Curtosi per la Normale Asimmetrica multidimensionale}{}% 4
+\BOOKMARK [1][-]{section.2.1}{L'indice di Mardia}{chapter.2}% 5
+\BOOKMARK [1][-]{section.2.2}{L'indice di Malkovich-Afifi}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.3}{Il nuovo indice direzionale}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.4}{L'indice di Srivastava}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.5}{L'indice di Mori-Rohatgi-Sz\351keley}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.6}{L'indice di Kollo}{chapter.2}% 10
+\BOOKMARK [0][-]{chapter.3}{Confronto tra le misure di Curtosi}{}% 11
+\BOOKMARK [1][-]{section.3.1}{Performance delle misure di Curtosi}{chapter.3}% 12
+\BOOKMARK [0][-]{chapter.4}{Conclusioni}{}% 13
+\BOOKMARK [0][-]{appendix.Alph1}{Operatori Matematici}{}% 14
+\BOOKMARK [1][-]{section.Alph1.1}{Operatore vec}{appendix.Alph1}% 15
+\BOOKMARK [1][-]{section.Alph1.2}{Il prodotto di Kronecker}{appendix.Alph1}% 16
+\BOOKMARK [1][-]{section.Alph1.3}{Il prodotto star}{appendix.Alph1}% 17
+\BOOKMARK [1][-]{section.Alph1.4}{Teorema per il calcolo dei momenti misti}{appendix.Alph1}% 18
+\BOOKMARK [1][-]{section.Alph1.5}{La matrice di permutazione}{appendix.Alph1}% 19
 \BOOKMARK [0][-]{appendix.Alph2}{Codice R}{}% 20
+\BOOKMARK [0][-]{appendix*.2}{Bibliography}{}% 21

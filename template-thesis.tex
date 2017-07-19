@@ -2,13 +2,14 @@
 \usepackage[italian]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[latin1]{inputenc}
-\usepackage{fancyhdr}
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{wasysym}
 \usepackage{amsthm}
+\usepackage{amstext}
 \usepackage[toc,page]{appendix}
+\usepackage{setspace}
 %------------------------------ colors
 \usepackage[usenames,dvipsnames,table]{xcolor} % use colors on table and more
 \definecolor{333}{RGB}{51, 51, 51} % define custom color
@@ -40,8 +41,11 @@
 \theoremstyle{definition}
 \newtheorem*{defn*}{Definizione} % definition numbers are dependent on theorem numbers
 \newtheorem{exmp}[thm]{Esempio} % same for example numbers
-
+\newtheorem{prop}{Proposizione}
+\renewcommand\theprop{\Roman{prop}}
+\newtheorem{sprop}{Proposizione}[prop]
 \begin{document}
+\onehalfspace
 \frontmatter
 
 
@@ -82,7 +86,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis tincidunt l
 
 \mainmatter
 
-\chapter{La distribuzione Normale Asimmetrica} %------------------------------ INTRODUCTION
+\chapter{La distribuzione Normale Asimmetrica multidimensionale} %------------------------------ INTRODUCTION
 %\markboth{\uppercase{\textit{\chaptername~\thechapter.Normale Asimmetrica Multidimensionale}}}{}
 Definita da A. Azzalini e A. Dalla Valle nel 1996 \cite{multi} come generalizzazione della corrispettiva classe di distribuzioni univariata proposta da Azzalini nel 1985 \cite{uni} la famiglia di distribuzioni Normale Asimmetrica multidimensionale presenta proprietà ideali tra cui:
 
@@ -95,8 +99,6 @@ Definita da A. Azzalini e A. Dalla Valle nel 1996 \cite{multi} come generalizzaz
 \end{itemize}  
 
 Grazie a queste proprietà la classe di distribuzioni Normali Asimmetriche permette un ottimo adattamento ai dati con relativa semplicità nel trattamento dal punto di vista matematico vista l'analogia con la distribuzione normale. Attraverso l'utilizzo del parametro di regolarizzazione è inoltre possibile modificare asimmetria e curtosi della distribuzione in quanto l'introduzione di asimmetria modifica anche le code della distribuzione portando ad una modifica della curtosi della stessa. Risulta necessario quindi ottenere degli indici che permettano di calcolare sia l'asimmetria \cite{scarpa} che della curtosi \cite{lucia} in modo da permettere una descrizione completa della forma della distribuzione. 
-
-\section{Distribuzione Normale Asimmetrica multidimensionale}
 
 La definizione della famiglia di distribuzioni Normale Asimmetrica multivariata nel campo pratico è stata estremamente rilevante in quanto, nel caso multivariato, il numero di distribuzioni capaci di modellare leggere asimmetrie per le distribuzioni marginali è estremamente ridotto; inoltre la famiglia Normale Asimmetrica multivariata presenta una grandissima flessibilità grazie al parametro di regolarizzazione permettendo quindi un'ottima capacità di adattamento a diversi tipi di dati. 
 La generalizzazione multivariata della famiglia Normale Asimmetrica fornita da Azzalini e Dalla Valle permette di ottenere una distribuzione le cui marginali sono a loro volta delle distribuzioni Normali Asimmetriche. 
@@ -123,7 +125,7 @@ $$
 
 con $\phi_p((y-\xi);\Omega)$ densità di una normale con media $\xi$ e matrice di varianze e covarianze $\Omega=\omega\overline{\Omega}\omega$, per la variabile $Y$ si indicherà la distribuzione come $Y\sim SN_p(\xi,\Omega,\alpha)$ 
 
-\subsection{I primi quattro momenti della distribuzione Normale Asimmetrica multidimensionale}
+\section{I primi quattro momenti della distribuzione Normale Asimmetrica multidimensionale}
 
 Azzalini e Dalla Valle (1996) hanno calcolato la funzione generatrice dei momenti nel caso in cui $Y\sim SN_p(\Omega,\alpha)$
 
@@ -189,7 +191,71 @@ M_4 & = & \Omega \otimes \xi \otimes \xi^\top + \xi \otimes \Omega \otimes \xi^\
 $$
 
 \end{thm}  
-\subsection{Le proprietà statistiche della distribuzione Normale Asimmetrica multidimensionale}
+\section{Le proprietà statistiche della distribuzione Normale Asimmetrica multidimensionale}
+Per le proprietà di seguito descritte si fa riferimento ad una variabile Normale Asimmetrica $p$-dimensionale $Y\sim SN_p(\Omega,\alpha)$. Queste proprietà possono essere divise in quattro categorie:  quelle utili per creare campioni casuali (I), quelle relative alle distribuzioni marginali (II), quelle riguardanti le trasformazioni lineari (III e IV) e quelle che riguardano la forma quadratica (V). Tutte le proprietà descritte valgono anche nel caso in cui $Y\sim SN_p(\xi,\Omega,\alpha)$ ma necessitano di una notazione più complicata che viene quindi omessa.
+
+\begin{prop}[Azzalini e Capitanio, 1999]
+sia $\left(\begin{array}{l} X_0 \\ X \end{array}\right)\sim N_{p+1}(0,\Omega^*)$ con $X_0$ scalare e $\Omega^=\left[\begin{array}{ll} 1 & \delta^\top \\ \delta & \Omega \end{array}\right]$ matrice di correlazione, allora:
+
+$$
+Z = \left\{\begin{array}{lr}
+X & \text{se } X_0>0 \\
+-X & \text{altrimenti}
+\end{array}\right.
+$$
+è una $SN_p(\Omega,\alpha)$ con:
+$$
+\alpha=\frac{\Omega^{-1}\delta}{(1-\delta^\top\Omega^{-1}\delta)^{1/2}}
+$$
+\end{prop}
+Questa proposizione fornisce una rappresentazione stocastica di $Z$ che permette di generale valori pseudocasuali da una distribuzione Normale Asimmetrica $p$-dimensionale. La proposizione è facilmente estendibile ad una Normale Asimmetrica con vettore delle medie diverso dal vettore nullo applicando il teorema $\textbf{1.1}$.
+
+\begin{prop}[Azzalini e Capitanio, 1999]
+sia $Z\sim SN_p(\Omega,\alpha)$ e $Z$ sia divisa in $Z^\top=(Z_1^\top , Z_2^\top)$ di dimensioni rispettivamente $h$ e $p-h$, siano
+$$
+\Omega = \left( \begin{array}{ll} \Omega_{11} & \Omega_{12} \\ \Omega_{21} & \Omega_{22} \end{array} \right)
+$$
+e
+$$
+\alpha=\left(\begin{array}{l}
+\alpha_1 \\
+\alpha_2
+\end{array}\right)
+$$
+le corrispondenti partizioni di $\Omega$ e $\alpha$, allora la distribuzione marginale di $Z_1$ è ancora una $SN_h(\Omega_{11},\overline{\alpha}_1)$ con $overline{\alpha}_1=\frac{\alpha_1+\Omega_{11}^{-1}\Omega_{12}\alpha{2}}{(1+\alpha_2^\top\Omega_{22.1}\alpha_2)^{1/2}}$ e $\Omega_{22.1} = \Omega_{22}-\Omega_{21}\Omega_{11}^{-1}\Omega_{12}.$
+\end{prop}
+Quello che si ricava da questa proposizione è che sottoinsiemi di componenti di $Z$ hanno distribuzione marginale che è ancora una variabile Normale Asimmetrica, quindi ciascuna componente marginale di $Z$ si distribuisce come una variabile casuale Normale Asimmetrica univariata. 
+
+\begin{prop}[Azzalini e Capitanio, 1999]
+sia $Z\sim SN_p(\Omega,\alpha)$ e $A$ una matrice non singolare $p\times p$ tale che $A^\top\Omega A$ sia una matrice di correlazione, allora
+$$
+A^\top Z \sim SN_p(A^\top \Omega A,A^{-1}\alpha)
+$$
+\end{prop}
+
+\begin{prop}[Azzalini e Capitanio, 1999]
+sia $Z\sim SN_p(\Omega,\alpha)$, esiste una trasformazione lineare $Z^*=A^*Z$ tale che $Z^*\sim SN_p(I_p,\alpha^*)$, dove al più una sola componente di $\alpha$ è diversa da $0$.
+\end{prop}
+
+Questo risultato permette di definire una "forma canonica" per la distribuzione Normale Asimmetrica multivariata, le cui componenti sono mutualmente indipendenti con una sola componente a rappresentare tutta l'asimmetria della distribuzione multivariata. Se solo una delle componenti del vettore $\alpha$ è diversa da $0$, questo implica che non solo tutta l'asimmetria della distribuzione venga "assorbita" da una componente, ma anche la curtosi. Esisterà, perciò, al più una sola componente con curtosi diversa da quella di una Normale multivariata.
+La densità di $Z^*$ è data da (Azzalini e Capitanio, 1999):
+$$
+2\prod_{i=1}^{p} \phi(u_i)\Phi(\alpha_m^*u_m)
+$$
+
+con $\alpha_m^*=(\alpha^\top\Omega\alpha)^{1/2}$ unica componente (se esiste) di $\alpha^*$ diversa da $0$.
+\begin{prop}[Azzalini e Capitanio, 1999]
+Sia $Z\sim SN_p(\Omega,\alpha)$ e $B$ matrice $p \times p$ simmetrica semi-definita positiva di rango $k$ tale che $B\Omega B=B$, allora $Z^\top B Z \sim \chi_k^2$
+
+Generalizzando questa proposizione si ottiene 
+\begin{sprop}[Azzalini e Capitanio, 1999]
+Sia $Z\sim SN_p(\Omega,\alpha)$ e $C$ matrice a rango pieno $p\times k\,\,(p\leq k)$, allora $Z^\top C(C^\top \Omega C)^{-1} C^\top Z \sim \chi^2_p$
+\end{sprop}
+\end{prop}
+
+Da queste due proprietà si ricava che $Z^\top\Omega Z\sim \chi^2_p$. 
+
+Come si può notare questa proprietà non coinvolge il parametro $\alpha$
 \thispagestyle{empty}
 
 
@@ -280,7 +346,7 @@ $$
 E\left[\gamma_i^\top X\right]^4=(\gamma_i^\top \otimes \gamma_i^\top)M_4(\gamma_i\otimes\gamma_i)
 $$
 
-Per calcolare questo indice per una variabile casuale Normale Asimmetrica multidimensionale è sufficiente sostituire il momento non centrato di quarto ordine con quello della Normale Asimmetrica multidimensionale (paragrafo 1.1.1) dopo aver centrato la variabile $Y$. Si ottiene quindi:
+Per calcolare questo indice per una variabile casuale Normale Asimmetrica multidimensionale è sufficiente sostituire il momento non centrato di quarto ordine con quello della Normale Asimmetrica multidimensionale (paragrafo 1.1) dopo aver centrato la variabile $Y$. Si ottiene quindi:
 $$
 \begin{array}{lll}
 E[\gamma_i^\top(X)]^4 & = & (\gamma_i^\top \otimes \gamma_i^\top)M_4(\gamma_i\otimes\gamma_i) \\
@@ -308,7 +374,7 @@ $$
 K(X)=I_p \star M_4(Y) - (p+2)I_p
 $$
 \end{defn*}
-Utilizzando il momento quarto calcolato da Genton e coautori (2001) descritto nel paragrafo 1.1.1 è possibile ottenere l'indice per la distribuzione Normale Asimmetrica multidimensionale come:
+Utilizzando il momento quarto calcolato da Genton e coautori (2001) descritto nel paragrafo 1.1 è possibile ottenere l'indice per la distribuzione Normale Asimmetrica multidimensionale come:
 
 $$
 \begin{array}{lll}
@@ -340,7 +406,7 @@ $$
 B(X)=\textbf{1}_{p\times p} \star M_4(Y)
 $$
 
-Come nei casi precedenti per la distribuzione Normale Asimmetrica multidimensionale è sufficiente sostituire la matrice $M_4$ presentata nel paragrafo 1.1.1  calcolata da Genton e coautori  ottenendo quindi:
+Come nei casi precedenti per la distribuzione Normale Asimmetrica multidimensionale è sufficiente sostituire la matrice $M_4$ presentata nel paragrafo 1.1  calcolata da Genton e coautori  ottenendo quindi:
 $$
 \begin{array}{lll}
 K(X) &= &\textbf{1}_{p\times p}\star(\Omega \otimes \xi \otimes \xi^\top + \xi \otimes \Omega \otimes \xi^\top + vec(\Omega)\otimes \xi^\top \otimes \xi^\top\\
@@ -402,6 +468,29 @@ Come per l'indice di Mori anche in questo caso avviene un "collasso" di alcuni e
 		$$
 		con $a_{ij}$ elemento generico della matrice $A$.
 		\end{defn*}
+		\section{Teorema per il calcolo dei momenti misti}
+		Questo teorema è utile per il calcolo dei momenti misti per distribuzioni inserite in uno spazio sferico.
+		\begin{defn*}[Fang,Kolz e Ng, 1990]
+		sia $u^{(n)}$ distribuita uniformemente su una sfera con superficie in $\Re^{n}$ per qualsiasi intero $m_1,\ldots,m_n$ con
+		$$
+		m = \sum_{i=1}^{n} m_i
+		$$	
+		i momenti misti di $u_{(n)}$ possono essere espressi come
+		$$
+		E
+		\left(
+		\prod_{i=1}^{n} u_i^{m_i}
+		\right) 
+		= 
+		\left\{ 
+		\begin{array}{ll}
+		\frac{1}{(n/2)^{[l]}}\prod_{i=1}^{n} \frac{(2l_i)!}{4^{l-i}(l_i)!} & \text{se } m_i=2l_i \text{ è pari} \\
+		0 & \text{se anche uno degli } m_i \text{ è dispari}
+		\end{array}
+		\right.
+		$$
+		con $x^{[l]}=x(x+1)\ldots(x+l-1)$.
+		\end{defn*}
 		\section{La matrice di permutazione}
 		Per poter definire le matrici di permutazione è necessario introdurre il concetto di matrice elementare.
 		\begin{defn*}
@@ -417,7 +506,6 @@ Come per l'indice di Mori anche in questo caso avviene un "collasso" di alcuni e
 	\chapter{Codice R}
 The contents...
 \backmatter
-
 \begingroup %------------------------------ BIBLIOGRAPHY
   \makeatletter
   \let\ps@plain\ps@empty
@@ -426,4 +514,6 @@ The contents...
   \addcontentsline{toc}{chapter}{Bibliography}
   \bibliographystyle{ieeetr} % sort in order of appearance
 \endgroup
+
+
 \end{document} 
